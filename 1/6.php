@@ -1,6 +1,6 @@
 <html>
 <body>
-<form>
+<form method="POST">
 Enter First Number:
 <input type="number" name="num1">
 <br>
@@ -11,9 +11,12 @@ Enter Second Number:
 </form>
 </body>
 <?php
-$num1 = $_GET['num1'];
-$num2 = $_GET['num2'];
+if(isset($_POST['addbutton']))
+{
+$num1 = $_POST['num1'];
+$num2 = $_POST['num2'];
 $sum = $num1 + $num2;
 echo "Sum is " . $sum;
+}
 ?>
 </html>
