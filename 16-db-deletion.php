@@ -30,8 +30,7 @@ if (mysqli_query($conn, $sql)) {
         Enter ID to delete
         <input type="text" name="did">
         <input type="submit" value="delete" name="delete">
-        <br>
-        <br><br>
+        <br><br><br>
 </body>
 
 </html>
