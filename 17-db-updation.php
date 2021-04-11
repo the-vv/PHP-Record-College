@@ -29,14 +29,14 @@ if (mysqli_query($conn, $sql)) {
         </h2>
         Enter ID to update
         <input type="text" name="uid">
-        <br>   
-        Select which value to update     
+        <br>
+        Select which value to update
         <select name="col" id="">
-        <option value="name">Name</option>
-        <option value="email">Email</option>
-        <option value="mobile">Mobile</option>
+            <option value="name">Name</option>
+            <option value="email">Email</option>
+            <option value="mobile">Mobile</option>
         </select>
-        <br>        
+        <br>
         Enter the value
         <input type="text" name="value">
         <br>
@@ -58,13 +58,7 @@ function show()
 }
 if (isset($_POST['delete'])) {
     $id = $_POST['uid'];
-    if($_POST['col'] == 'name') {
-        $sql = "UPDATE s4bca SET name='{$_POST['value']}' WHERE id=$id";
-    } elseif($_POST['col'] == 'email') {
-        $sql = "UPDATE s4bca SET email='{$_POST['value']}' WHERE id=$id";
-    } elseif($_POST['col'] == 'mobile') {
-        $sql = "UPDATE s4bca SET mobile='{$_POST['value']}' WHERE id=$id";
-    }
+    $sql = "UPDATE s4bca SET {$_POST['col']}='{$_POST['value']}' WHERE id=$id";
     if (mysqli_query($conn, $sql)) {
         echo "<br>Record of ID: " . $id . " Successfully updated";
         show();
