@@ -25,7 +25,7 @@ if (mysqli_query($conn, $sql)) {
 <body>
     <form method="post">
         <h2>
-            Delete Data From DB
+            Update Data From DB
         </h2>
         Enter ID to update
         <input type="text" name="uid">
