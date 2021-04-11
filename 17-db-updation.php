@@ -40,7 +40,7 @@ if (mysqli_query($conn, $sql)) {
         Enter the value
         <input type="text" name="value">
         <br>
-        <input type="submit" value="update" name="delete">
+        <input type="submit" value="update" name="update">
         <br><br><br>
 </body>
 
@@ -56,7 +56,7 @@ function show()
         echo "<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['email'] . "</td><td>" . $row['mobile'] . "</td></td>";
     }
 }
-if (isset($_POST['delete'])) {
+if (isset($_POST['update'])) {
     $id = $_POST['uid'];
     $sql = "UPDATE s4bca SET {$_POST['col']}='{$_POST['value']}' WHERE id=$id";
     if (mysqli_query($conn, $sql)) {
